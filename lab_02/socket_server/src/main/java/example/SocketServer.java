@@ -13,7 +13,7 @@ public class SocketServer
         // Check arguments
         if (args.length < 1) {
             System.err.println("Argument(s) missing!");
-            System.err.printf("Usage: java %s port%n", SocketServer.class.getName());
+            System.err.printf("Usage: java %s port%n", new Object[]{SocketServer.class.getName()});
             return;
         }
 
@@ -22,13 +22,13 @@ public class SocketServer
 
         // Create server socket
         ServerSocket serverSocket = new ServerSocket(port);
-        System.out.printf("Server accepting connections on port %d %n", port);
+        System.out.printf("Server accepting connections on port %d %n", new Object[] {Integer.valueOf(port)});
 
         // wait for and then accept client connection
         // a socket is created to handle the created connection
         Socket clientSocket = serverSocket.accept();
         System.out.printf("Connected to client %s on port %d %n",
-            clientSocket.getInetAddress().getHostAddress(), clientSocket.getPort());
+            new Object[]{clientSocket.getInetAddress().getHostAddress(), Integer.valueOf(clientSocket.getPort())});
 
         // Create stream to receive data from client
         BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
@@ -36,7 +36,7 @@ public class SocketServer
         // Receive data until client closes the connection
         String response;
         while ((response = in.readLine()) != null)
-            System.out.printf("Received message with content: '%s'%n", response);
+            System.out.printf("Received message with content: '%s'%n", new Object[]{response});
 
         // Close connection to current client
         clientSocket.close();
