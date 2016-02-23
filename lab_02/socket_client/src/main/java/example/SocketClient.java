@@ -11,7 +11,7 @@ public class SocketClient {
         // Check arguments
         if (args.length < 3) {
             System.err.println("Argument(s) missing!");
-            System.err.printf("Usage: java %s host port file%n", SocketClient.class.getName());
+            System.err.printf("Usage: java %s host port file%n", new Object[]{SocketClient.class.getName()});
             return;
         }
 
@@ -30,7 +30,7 @@ public class SocketClient {
 
         // Create client socket
         Socket socket = new Socket(host, port);
-        System.out.printf("Connected to server %s on port %d %n", host, port);
+        System.out.printf("Connected to server %s on port %d %n", new Object[]{Integer.valueOf(host), Integer.valueOf(port)});
 
         // Create stream to send data to server
         DataOutputStream out = new DataOutputStream(socket.getOutputStream());
