@@ -1,6 +1,7 @@
 package example;
 
 import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.ServerSocket;
@@ -37,6 +38,21 @@ public class SocketServer
         String response;
         while ((response = in.readLine()) != null)
             System.out.printf("Received message with content: '%s'%n", response);
+
+        // Close connection to current client
+        clientSocket.close();
+        System.out.println("Closed connection with client");
+
+        // Accept another socket connection
+        clientSocket = serverSocket.accept();
+        System.out.printf("Connected to client %s on port %d %n",
+                clientSocket.getInetAddress().getHostAddress(), Integer.valueOf(clientSocket.getPort()));
+
+        // Send confirmation to client
+        DataOutputStream os = new DataOutputStream(clientSocket.getOutputStream());
+        os.writeBytes("ACK");
+        os.writeBytes("\n");
+        os.close();
 
         // Close connection to current client
         clientSocket.close();

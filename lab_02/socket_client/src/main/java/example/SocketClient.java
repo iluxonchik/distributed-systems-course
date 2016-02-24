@@ -1,7 +1,6 @@
 package example;
 
-import java.io.DataOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.Socket;
 
 
@@ -43,5 +42,21 @@ public class SocketClient {
         // Close client socket
         socket.close();
         System.out.println("Connection closed");
+
+        socket = new Socket(host, port);
+        System.out.printf("Connected to server %s on port %d %n", host, Integer.valueOf(port));
+
+        // Get ACK from server
+        BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+
+        String res;
+        while((res = br.readLine()) != null)
+            System.out.println(String.format("Reply from server: %s", res));
+        br.close();
+
+        // Close client socket
+        socket.close();
+        System.out.println("Connection closed");
+
     }
 }
