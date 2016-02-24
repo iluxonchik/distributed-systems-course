@@ -30,7 +30,7 @@ public class SocketClient {
 
         // Create client socket
         Socket socket = new Socket(host, port);
-        System.out.printf("Connected to server %s on port %d %n", Integer.valueOf(host), Integer.valueOf(port));
+        System.out.printf("Connected to server %s on port %d %n", host, Integer.valueOf(port));
 
         // Create stream to send data to server
         DataOutputStream out = new DataOutputStream(socket.getOutputStream());
