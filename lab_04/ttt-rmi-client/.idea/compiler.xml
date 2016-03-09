@@ -23,10 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="ttt-rmi-client" />
+        <module name="ttt-rmi-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ttt-rmi-client" target="1.8" />
+      <module name="ttt-rmi-server" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

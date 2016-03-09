@@ -1,6 +1,9 @@
 package ttt;
 
-public class TTT {
+import java.rmi.*;
+import java.rmi.server.UnicastRemoteObject;
+
+public class TTT extends UnicastRemoteObject implements TTTService {
 	char board[][] = {
 		  {'1','2','3'},          /* Initial values are reference numbers */
 		  {'4','5','6'},          /* used to select a vacant square for   */
@@ -9,7 +12,12 @@ public class TTT {
 	int nextPlayer = 0;
 	int numPlays = 0;
 
-    public String currentBoard() {
+    public TTT() throws RemoteException {
+
+    }
+
+    @Override
+    public String currentBoard() throws RemoteException{
     	String s = "\n\n " + 
     				board[0][0]+" | " +
     				board[0][1]+" | " +
@@ -25,7 +33,8 @@ public class TTT {
     	return s;
     }
 
-    public boolean play(int row, int column, int player) {
+    @Override
+    public boolean play(int row, int column, int player) throws RemoteException{
 		if (!(row >=0 && row <3 && column >= 0 && column < 3))
 			return false;
 		if (board[row][column] > '9')
@@ -42,7 +51,8 @@ public class TTT {
 		return true;	
     }
 
-    public int checkWinner() {
+    @Override
+    public int checkWinner() throws RemoteException {
     	  int i;
     	  /* Check for a winning line - diagonals first */     
     	  if((board[0][0] == board[1][1] && board[0][0] == board[2][2]) ||

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ttt-rmi-client.iml" filepath="$PROJECT_DIR$/ttt-rmi-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ttt-rmi-server/ttt-rmi-server.iml" filepath="$PROJECT_DIR$/../ttt-rmi-server/ttt-rmi-server.iml" />
     </modules>
   </component>
 </project>
