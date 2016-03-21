@@ -1,0 +1,13 @@
+2. Para garantir que certas operações se executem atomicamente. Em currentBoard() é importante que o buffer seja
+preenchido todo de uma só vez, sem poder ser modificado simultaneamente por 2 ou clientes. Todos os mutexes
+são usados para garantir que apeanas um cliente manipule o buffer.
+
+4.
+    a. ttt_xdr.c
+    b. ttt_clnt.c
+    c. Cliente: ttt_clnt.c ttt_client.c
+       Servidor: ttt_svc.c ttt_server.c
+       Ambos: ttt_xdr.c ttt.h 
+    d. ttt_client.c e ttt_server.c
+    c. UDP
+     
