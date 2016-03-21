@@ -27,7 +27,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
-        <wsdl.directory>${basedir}/../ping-ws_juddi/src/main/resources</wsdl.directory>
+        <wsdl.directory>${basedir}/../server/src/main/resources</wsdl.directory>
         <wsdl.filename>Ping.wsdl</wsdl.filename>
 
         <mainclass>example.ws.cli.PingClient</mainclass>

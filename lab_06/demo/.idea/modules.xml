@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/client/ping-ws-cli_juddi.iml" filepath="$PROJECT_DIR$/client/ping-ws-cli_juddi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/server/ping-ws_juddi.iml" filepath="$PROJECT_DIR$/server/ping-ws_juddi.iml" />
+    </modules>
+  </component>
+</project>
