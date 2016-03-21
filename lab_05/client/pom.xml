@@ -13,6 +13,16 @@
 
     <dependencies>
         <!-- UDDI Naming ... -->
+        <dependency>
+            <groupId>pt.ulisboa.tecnico.sdis</groupId>
+            <artifactId>uddi-naming</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>1.1.2</version>
+        </dependency>
     </dependencies>
 
     <properties>
@@ -23,13 +33,13 @@
         <maven.compiler.target>1.8</maven.compiler.target>
 
         <!-- WSDL is required for client code generation -->
-        <ws.url>http://localhost:8080/...</ws.url>
+        <ws.url>http://localhost:8080/ttt-ws/endpoint</ws.url>
         <wsdl.url>${ws.url}?WSDL</wsdl.url>
 
         <mainclass>ttt.cli.Game</mainclass>
 
         <uddi.url>http://localhost:9090</uddi.url>
-        <ws.name>...</ws.name>
+        <ws.name>TicTacToe</ws.name>
     </properties>
 
     <build>
